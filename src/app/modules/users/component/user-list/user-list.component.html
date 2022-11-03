@@ -1,1 +1,35 @@
-<p>user-list works!</p>
+<div class="container">
+  <div class="row vh-100">
+    <div class="col-10 mx-auto my-auto">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col"><h5 class="text-center">ID</h5></th>
+          <th scope="col"><h5 class="text-center">Firstname</h5></th>
+          <th scope="col"><h5 class="text-center">Lastname</h5></th>
+          <th scope="col"><h5 class="text-center">Age</h5></th>
+          <th scope="col"><h5 class="text-center">Email</h5></th>
+          <th scope="col"><h5 class="text-center">Phone</h5></th>
+          <th scope="col"><h5 class="text-center">Actions</h5></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <th scope="row"><div><p class="text-center">{{user.id}}</p></div></th>
+          <td><div><p class="text-center">{{user.firstname}}</p></div></td>
+          <td><div><p class="text-center">{{user.lastname}}</p></div></td>
+          <td><div><p class="text-center">{{user.age}}</p></div></td>
+          <td><div><p class="text-center">{{user.email}}</p></div></td>
+          <td><div><p class="text-center">{{user.phone}}</p></div></td>
+          <td><div class="d-flex justify-content-center">
+            <a class="link-primary mx-2" [routerLink]="['/users/action/']" [queryParams]="{action: 'update'}"><i class="bi bi-pencil-fill "></i></a>
+            <i class="bi bi-trash3-fill mx-2 text-danger"></i>
+            <a class="link-success mx-2" [routerLink]="['/users/details/']" [queryParams]="{id: user.id}"><i class="bi bi-eye-fill "></i></a>
+          </div></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

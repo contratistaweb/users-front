@@ -6,6 +6,8 @@ import { UsersLayoutComponent } from './component/users-layout/users-layout.comp
 import { UsersFormComponent } from './component/users-form/users-form.component';
 import { UserListComponent } from './component/user-list/user-list.component';
 import { UserDetailsComponent } from './component/user-details/user-details.component';
+import {CoreModule} from "../core/core.module";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -17,7 +19,10 @@ import { UserDetailsComponent } from './component/user-details/user-details.comp
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CoreModule
   ]
 })
 export class UsersModule { }

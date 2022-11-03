@@ -1,0 +1,20 @@
+import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../../environments/environment";
+import {User, UserCreate} from "../interfaces/user";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UsersService {
+apiUrl = environment.apiUrl+':'+environment.apiPort
+  constructor(private readonly http: HttpClient) { }
+
+  getUsers(){
+    return this.http.get<User[]>(`${this.apiUrl}/users`)
+  }
+
+  addUser(user: UserCreate){
+    return this.http.post<User[]>(`${this.apiUrl}/users`, user)
+  }
+}
