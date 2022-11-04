@@ -14,6 +14,10 @@ apiUrl = environment.apiUrl+':'+environment.apiPort
     return this.http.get<User[]>(`${this.apiUrl}/users`)
   }
 
+  getUserForId(id:number){
+    return this.http.get<User[]>(`${this.apiUrl}/users/${id}`)
+  }
+
   addUser(user: UserCreate){
     return this.http.post<User[]>(`${this.apiUrl}/users`, user)
   }

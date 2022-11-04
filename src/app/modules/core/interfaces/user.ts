@@ -1,4 +1,5 @@
 export interface User {
+  create_time: Date;
   id: number;
   firstname: string;
   lastname: string;

@@ -6,7 +6,8 @@
                [dismissOnTimeout]="alert.timeout">{{message}}</alert>
       </div>
       <div class="col-3 ms-auto row d-flex justify-content-end align-content-center section-min">
-        <a class="btn btn-outline-success col-auto rounded-pill" [routerLink]="['/users/action']" [queryParams]="{type: 'create'}">Add
+        <a class="btn btn-outline-success col-auto rounded-pill" [routerLink]="['/users/action']"
+           [queryParams]="{type: 'create'}">Add
           new user</a>
       </div>
     </div>
@@ -49,8 +50,9 @@
               <a class="link-primary mx-2" (click)="goToUpdateUser(user)"><i class="bi bi-pencil-fill "></i></a>
               <i class="bi bi-trash3-fill mx-2 text-danger" [attr.role]="'button'"
                  (click)="openModal(template, user.id)"></i>
-              <a class="link-success mx-2" [routerLink]="['/users/details/']" [queryParams]="{id: user.id}"><i
-                class="bi bi-eye-fill "></i></a>
+              <a class="link-success mx-2" [routerLink]="['/users/details/']" [queryParams]="{id: user.id}">
+                <i class="bi bi-eye-fill "></i>
+              </a>
             </div>
           </td>
         </tr>

@@ -1,1 +1,31 @@
-<p>user-details works!</p>
+<div class="container vh-100">
+  <div class="row h-100">
+    <div class="col-8 my-auto mx-auto">
+      <div class="card text-justify mx-auto w-100" style="width: 36rem;" *ngIf="user">
+        <div class="card-body row">
+          <div class="col-10 mx-auto row d-flex justify-content-start">
+            <h2 class="card-title fw-bold"> User information</h2>
+          </div>
+          <div class="d-flex justify-content-center align-content-center p-2">
+            <img class="card-img p-2" src="https://cdn.onlinewebfonts.com/svg/img_568656.png" alt="user image">
+          </div>
+          <div class="col-10 mx-auto row d-flex justify-content-between">
+            <div class="col-5 px-2 my-2"><p class="card-text">Firstname: {{user.firstname}}</p></div>
+            <div class="col-5 px-2 my-2"><p class="card-text">Lastname: {{user.lastname}}</p></div>
+            <div class="col-5 px-2 my-2"><p class="card-text">Age: {{user.age}}</p></div>
+            <div class="col-5 px-2 my-2"><p class="card-text">Email: {{user.email}}</p></div>
+            <div class="col-5 px-2 my-2"><p class="card-text">Phone: {{user.lastname}}</p></div>
+            <div class="col-5 px-2 my-2"><p class="card-text">Create at: {{user.create_time}}</p></div>
+          </div>
+          <div class="col-12 row d-flex justify-content-center align-content-center mt-5 mx-auto">
+            <a (click)="goToUpdateUser(user)"
+               class="btn btn-outline-success col-auto">Update</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 row d-flex justify-content-end align-content-center mt-5 mx-auto">
+        <a [routerLink]="['..']" class="btn btn-outline-primary col-auto">Back to user list</a>
+      </div>
+    </div>
+  </div>
+</div>
