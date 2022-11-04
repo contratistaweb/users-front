@@ -23,6 +23,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FormsModule,
     ReactiveFormsModule,
     CoreModule
-  ]
+  ],
+  providers: []
 })
 export class UsersModule { }

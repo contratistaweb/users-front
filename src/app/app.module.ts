@@ -7,7 +7,7 @@ import { MainLayoutComponent } from './modules/core/shared/componentes/main-layo
 import { CopyrightComponent } from './modules/core/shared/componentes/copyright/copyright.component';
 import {CookieService} from "ngx-cookie-service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {ToastrModule} from "ngx-toastr";
+import {ToastrModule, ToastrService} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -17,11 +17,11 @@ import {ToastrModule} from "ngx-toastr";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    AppRoutingModule,
   ],
-  providers: [CookieService],
+  providers: [CookieService, ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

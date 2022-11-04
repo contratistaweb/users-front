@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import {UsersService} from "./services/users.service";
 import {HttpClientModule} from "@angular/common/http";
 
-
-
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [UsersService]
 })
