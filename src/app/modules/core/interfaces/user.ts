@@ -1,4 +1,3 @@
-
 export interface User {
   id: number;
   firstname: string;
@@ -8,5 +7,6 @@ export interface User {
   phone: string;
 }
 
+
 export type UserCreate = Omit<User, "id">;
-export type UserUpdate = Pick<User, 'id'>;
+export type UserUpdate = Partial<User>;

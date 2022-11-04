@@ -1,1 +1,36 @@
-<p>users-form works!</p>
+<div class="container">
+  <div class="row vh-100">
+    <div class="col-10 col-md-8 col-lg-6 mx-auto my-auto">
+    <form class="card shadow p-3 my-3" [formGroup]="userForm" (ngSubmit)="actionExecute()">
+      <legend>
+        <h2 class="fw-bold text-center my-3">{{action}} user form</h2>
+      </legend>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="firstname" placeholder="Firstname" formControlName="firstname">
+        <label for="firstname">Firstname</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="lastname" placeholder="Lastname" formControlName="lastname">
+        <label for="lastname">Lastname</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="age" placeholder="Age" formControlName="age">
+        <label for="age">Age</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email">
+        <label for="email">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="phone" placeholder="Phone" formControlName="phone">
+        <label for="phone">Phone</label>
+      </div>
+      <div class="d-flex justify-content-between mb-3">
+        <a [routerLink]="['..']" class="btn btn-outline-primary">Back</a>
+        <button class="btn btn-outline-success">{{action}}</button>
+      </div>
+    </form>
+
+    </div>
+  </div>
+</div>

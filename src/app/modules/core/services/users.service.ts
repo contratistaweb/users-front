@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../../environments/environment";
-import {User, UserCreate} from "../interfaces/user";
+import {User, UserCreate, UserUpdate} from "../interfaces/user";
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +16,9 @@ apiUrl = environment.apiUrl+':'+environment.apiPort
 
   addUser(user: UserCreate){
     return this.http.post<User[]>(`${this.apiUrl}/users`, user)
+  }
+
+  updateUser(id: number, changes: UserUpdate) {
+    return this.http.patch(`${this.apiUrl}/users/${id}`, changes);
   }
 }
