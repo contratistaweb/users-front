@@ -21,4 +21,8 @@ apiUrl = environment.apiUrl+':'+environment.apiPort
   updateUser(id: number, changes: UserUpdate) {
     return this.http.patch(`${this.apiUrl}/users/${id}`, changes);
   }
+
+  userDelete(id: number) {
+    return this.http.delete(`${this.apiUrl}/users/${id}`);
+  }
 }

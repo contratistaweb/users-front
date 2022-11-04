@@ -8,6 +8,7 @@ import { UserListComponent } from './component/user-list/user-list.component';
 import { UserDetailsComponent } from './component/user-details/user-details.component';
 import {CoreModule} from "../core/core.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {AlertModule} from "ngx-bootstrap/alert";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     UsersRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
+    AlertModule
   ],
   providers: []
 })

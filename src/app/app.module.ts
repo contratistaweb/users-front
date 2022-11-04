@@ -8,6 +8,7 @@ import { CopyrightComponent } from './modules/core/shared/componentes/copyright/
 import {CookieService} from "ngx-cookie-service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule, ToastrService} from "ngx-toastr";
+import {ModalModule} from "ngx-bootstrap/modal";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {ToastrModule, ToastrService} from "ngx-toastr";
     BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    ModalModule.forRoot(),
     AppRoutingModule,
   ],
   providers: [CookieService, ToastrService],

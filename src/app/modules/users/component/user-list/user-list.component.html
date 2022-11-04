@@ -1,9 +1,16 @@
-<div class="container">
-  <div class="row vh-100">
-    <div class="col-12 row d-flex justify-content-end align-content-center">
-      <a class="btn btn-outline-success col-auto" [routerLink]="['/users/action']" [queryParams]="{type: 'create'}">Add new user</a>
+<div class="container vh-100">
+  <div class="row my-5">
+    <div class="col-12 row d-flex justify-content-between align-content-center mx-0">
+      <div class="col-8">
+        <alert class="col-auto" *ngIf="alert.show" [type]="alert.type"
+               [dismissOnTimeout]="alert.timeout">{{message}}</alert>
+      </div>
+      <div class="col-3 ms-auto row d-flex justify-content-end align-content-center section-min">
+        <a class="btn btn-outline-success col-auto rounded-pill" [routerLink]="['/users/action']" [queryParams]="{type: 'create'}">Add
+          new user</a>
+      </div>
     </div>
-    <div class="col-10 mx-auto my-auto table-responsive">
+    <div class="col-10 mt-3 mx-auto table-responsive">
       <table class="table caption-top">
         <caption><h2 class="text-center">Users list</h2></caption>
         <thead>
@@ -19,20 +26,46 @@
         </thead>
         <tbody>
         <tr *ngFor="let user of users">
-          <th scope="row"><div><p class="text-center">{{user.id}}</p></div></th>
-          <td><div><p class="text-center">{{user.firstname}}</p></div></td>
-          <td><div><p class="text-center">{{user.lastname}}</p></div></td>
-          <td><div><p class="text-center">{{user.age}}</p></div></td>
-          <td><div><p class="text-center">{{user.email}}</p></div></td>
-          <td><div><p class="text-center">{{user.phone}}</p></div></td>
-          <td><div class="d-flex justify-content-center">
-            <a class="link-primary mx-2" (click)="goToUpdateUser(user)"><i class="bi bi-pencil-fill "></i></a>
-            <i class="bi bi-trash3-fill mx-2 text-danger" [attr.role]="'button'"></i>
-            <a class="link-success mx-2" [routerLink]="['/users/details/']" [queryParams]="{id: user.id}"><i class="bi bi-eye-fill "></i></a>
-          </div></td>
+          <th scope="row">
+            <div><p class="text-center">{{user.id}}</p></div>
+          </th>
+          <td>
+            <div><p class="text-center">{{user.firstname}}</p></div>
+          </td>
+          <td>
+            <div><p class="text-center">{{user.lastname}}</p></div>
+          </td>
+          <td>
+            <div><p class="text-center">{{user.age}}</p></div>
+          </td>
+          <td>
+            <div><p class="text-center">{{user.email}}</p></div>
+          </td>
+          <td>
+            <div><p class="text-center">{{user.phone}}</p></div>
+          </td>
+          <td>
+            <div class="d-flex justify-content-center">
+              <a class="link-primary mx-2" (click)="goToUpdateUser(user)"><i class="bi bi-pencil-fill "></i></a>
+              <i class="bi bi-trash3-fill mx-2 text-danger" [attr.role]="'button'"
+                 (click)="openModal(template, user.id)"></i>
+              <a class="link-success mx-2" [routerLink]="['/users/details/']" [queryParams]="{id: user.id}"><i
+                class="bi bi-eye-fill "></i></a>
+            </div>
+          </td>
         </tr>
         </tbody>
       </table>
+      <div *ngIf="users.length===0" class="mx-auto">
+        <p class="display-2 text-center">no users to display</p>
+      </div>
+      <ng-template #template>
+        <div class="modal-body text-center">
+          <p>Do you want to confirm?</p>
+          <button type="button" class="btn btn-default" (click)="confirm()">Yes</button>
+          <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>
